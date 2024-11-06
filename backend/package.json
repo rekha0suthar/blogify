@@ -2,9 +2,10 @@
   "name": "blog-app",
   "version": "1.0.0",
   "description": "simple blog application",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node index",
+    "dev": "node --watch index"
   },
   "author": "",
   "license": "ISC",
@@ -12,7 +13,6 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "mongoose": "^8.8.0",
-    "nodemon": "^3.1.7"
+    "mongoose": "^8.8.0"
   }
 }
