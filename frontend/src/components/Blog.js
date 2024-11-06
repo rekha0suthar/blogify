@@ -9,7 +9,7 @@ const Blog = ({ blog }) => {
   const handleDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/blogs/${id}`
+        `https://blogify-backend-rho.vercel.app/api/blogs/${id}`
       );
       setBlogs(response.data.blogs);
     } catch (err) {

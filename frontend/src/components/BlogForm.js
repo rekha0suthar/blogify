@@ -9,7 +9,7 @@ const BlogForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/blogs/',
+        'https://blogify-backend-rho.vercel.app/api/blogs/',
         { title, desc },
         {
           headers: {
@@ -28,7 +28,7 @@ const BlogForm = () => {
   useEffect(() => {
     setTitle('');
     setDesc('');
-  }, []);
+  }, [setTitle, setDesc]);
   return (
     <div className="blog-form">
       <h2>Add Blog</h2>

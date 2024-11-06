@@ -10,7 +10,9 @@ const BlogList = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/blogs/');
+        const response = await axios.get(
+          'https://blogify-backend-rho.vercel.app/api/blogs/'
+        );
         setBlogs(response.data);
       } catch (err) {
         console.log(err);

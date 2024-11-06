@@ -9,7 +9,7 @@ const EditBlog = () => {
     const fetchBlog = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/blogs/${blogId}`
+          `https://blogify-backend-rho.vercel.app/api/blogs/${blogId}`
         );
         setTitle(response.data.title);
         setDesc(response.data.desc);
@@ -18,13 +18,13 @@ const EditBlog = () => {
       }
     };
     fetchBlog();
-  }, [blogId]);
+  }, [blogId, setTitle, setDesc]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/blogs/${blogId}`,
+        `https://blogify-backend-rho.vercel.app/api/blogs/${blogId}`,
         { title, desc },
         {
           headers: {
