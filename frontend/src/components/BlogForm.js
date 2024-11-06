@@ -17,7 +17,7 @@ const BlogForm = () => {
           },
         }
       );
-      setBlogs([...blogs, response.data]);
+      setBlogs([response.data, ...blogs]);
       setTitle('');
       setDesc('');
       setShowForm(false);
@@ -43,7 +43,6 @@ const BlogForm = () => {
           onChange={(e) => setTitle(e.target.value)}
         />
         <br />
-        <br />
         <label>Description</label>
         <br />
         <textarea
@@ -51,7 +50,6 @@ const BlogForm = () => {
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
         />
-        <br />
         <br />
         <button type="submit">Save</button>
       </form>

@@ -20,12 +20,22 @@ const Blog = ({ blog }) => {
     setEditBlog(true);
     setBlogId(id);
   };
+  // Format updatedAt
+  const formattedDate = new Date(blog.updatedAt).toLocaleString('en-GB', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  });
   return (
     <>
       <div key={blog._id} className="blog-post">
         <div>
           <h2>{blog.title}</h2>
           <p>{blog.desc}</p>
+          <p>{formattedDate}</p>
         </div>
         <div className="btns">
           <button className="edit-btn" onClick={() => handleEdit(blog._id)}>
